@@ -22,7 +22,7 @@ const MyPostings = () => {
     const fetchPosts = async () => {
       try {
         setLoading(true);
-        const response = await fetch("http://localhost:5001/api/posts");
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/posts`);
         if (!response.ok) {
           throw new Error("Failed to fetch posts");
         }

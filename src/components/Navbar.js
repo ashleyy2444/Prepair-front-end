@@ -23,7 +23,7 @@ const Navbar = () => {
       }
 
       try {
-        const response = await fetch("http://localhost:5001/api/auth/verify", {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/auth/verify`, {
           method: "GET",
           headers: { Authorization: `Bearer ${token}` },
         });
@@ -55,7 +55,7 @@ const Navbar = () => {
       }
 
       // Call the logout endpoint
-      await fetch("http://localhost:5001/api/auth/logout", {
+      await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/auth/logout`, {
         method: "POST",
         headers: { Authorization: `Bearer ${token}` },
       });
